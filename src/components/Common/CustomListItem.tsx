@@ -38,5 +38,5 @@ export const CustomListItem: React.FC<CustomListIconProps> = ({
         </ListItemText>
       </ListItemButton>
     </ListItem>
-  )
+)
 }
