@@ -7,19 +7,23 @@ import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined'
 import { CustomListItem } from '../Common/CustomListItem'
 import GroupOutlinedIcon from '@mui/icons-material/GroupOutlined'
 import SpaceDashboardOutlinedIcon from '@mui/icons-material/SpaceDashboardOutlined'
+import { useRouter } from 'next/navigation'
+
 
 export const Sections = () => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0)
-  
-  const handleSelect = (x: number) => {
-    setSelectedIndex(x)
-  }
+  const router = useRouter()
 
+  const handleSelect = (x: number, path: string) => {
+    setSelectedIndex(x)
+    router.push(path);
+  }
+  
   const sections = [
-    { icon: <HomeOutlinedIcon />, text: 'Overview' },
-    { icon: <FolderOutlinedIcon />, text: 'Project' },
-    { icon: <GroupOutlinedIcon />, text: 'Team' },
-    { icon: <SpaceDashboardOutlinedIcon />, text: 'Dashboard' },
+    { icon: <HomeOutlinedIcon />, text: 'Overview', path: '/'},
+    { icon: <FolderOutlinedIcon />, text: 'Project', path: '/projects'},
+    { icon: <GroupOutlinedIcon />, text: 'Team', path: '/teams'},
+    { icon: <SpaceDashboardOutlinedIcon />, text: 'Dashboard', path: '/dashboard' },
   ]
 
   return (
@@ -31,7 +35,7 @@ export const Sections = () => {
             icon={section.icon}
             text={section.text}
             isSelected={selectedIndex === index}
-            onSelect={() => handleSelect(index)}
+            onSelect={() => handleSelect(index, section.path)}
           />
         ))}
       </List>

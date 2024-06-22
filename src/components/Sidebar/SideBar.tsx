@@ -19,8 +19,9 @@ export const Sidebar = () => {
         flexDirection: 'column',
         justifyContent: 'space-between',
         p: 0.5,
+        height: '100%',
         width: '21em',
-        height: '100vh',
+        backgroundColor: colors.greyAccent[20],
       }}
     >
       <Box>
