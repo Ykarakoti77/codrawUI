@@ -10,6 +10,7 @@ import { FavouriteSection } from './FavouriteSection'
 import { CustomListItem } from '../Common/CustomListItem'
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined'
 import { text } from 'stream/consumers'
+import { useLayout } from '@/Context/LayoutContext'
 
 export const Sidebar = () => {
   return (
