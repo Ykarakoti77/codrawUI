@@ -6,9 +6,13 @@ import React, { ReactNode } from 'react'
 
 interface SquareIconButtonProps {
   icon: ReactNode
+  handleClick: () => void
 }
 
-export const SquareIconButton: React.FC<SquareIconButtonProps> = ({ icon }) => {
+export const SquareIconButton: React.FC<SquareIconButtonProps> = ({
+  icon,
+  handleClick,
+}) => {
   return (
     <Box>
       <IconButton
@@ -21,6 +25,7 @@ export const SquareIconButton: React.FC<SquareIconButtonProps> = ({ icon }) => {
           width: '32px',
           boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.05)',
         }}
+        onClick={handleClick}
       >
         {icon}
       </IconButton>

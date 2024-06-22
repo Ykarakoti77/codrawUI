@@ -1,6 +1,6 @@
 import { colors } from '@/Theme/theme'
 import {
-    Icon,
+  Icon,
   ListItem,
   ListItemButton,
   ListItemText,
@@ -15,28 +15,27 @@ interface CustomListIconProps {
   onSelect: () => void
 }
 
-
 export const CustomListItem: React.FC<CustomListIconProps> = ({
   icon,
   text,
   isSelected,
-  onSelect
+  onSelect,
 }) => {
-
   const color = isSelected ? colors.greyAccent[900] : colors.greyAccent[700]
   return (
     <ListItem disablePadding disableGutters>
-      <ListItemButton selected={isSelected} sx={{ borderRadius: '8px', height: '2.2em', my: '0.2em' }} onClick={onSelect}>
-        <Icon sx={{color: color, mr: '1em'}}>{icon}</Icon>
+      <ListItemButton
+        selected={isSelected}
+        sx={{ borderRadius: '8px', height: '2.2em', my: '0.2em' }}
+        onClick={onSelect}
+      >
+        <Icon sx={{ color: color, mr: '1em' }}>{icon}</Icon>
         <ListItemText>
-          <Typography
-            variant="body2"
-            color={color}
-          >
+          <Typography variant="body2" color={color}>
             {text}
-          </Typography> 
+          </Typography>
         </ListItemText>
       </ListItemButton>
     </ListItem>
-)
+  )
 }
